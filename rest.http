@@ -1,0 +1,38 @@
+@userId = 3
+
+GET http://localhost:1323/health-check
+###
+
+GET http://localhost:1323/tasks
+###
+
+POST http://localhost:1323/tasks
+Content-Type: application/json
+{
+    "description": "Hello",
+}
+###
+
+PUT http://localhost:1323/tasks/{{userId}}
+Content-Type: application/json
+{
+    "description": "Hello 123"
+}
+###
+
+PUT http://localhost:1323/tasks/{{userId}}
+Content-Type: application/json
+{
+    "is_complete": true
+}
+###
+
+DELETE http://localhost:1323/tasks/{{userId}}
+###
+
+POST http://localhost:1323/login
+Content-Type: application/json
+{
+    "username": "",
+    "password": "",
+}
